@@ -1,13 +1,11 @@
 var express=require('express');
 var app=express()
 var fs = require('fs');
-var qs = require('querystring');
-
 var bodyParser= require('body-parser');
 var compression=require('compression');
+var helmet=require('helmet')
+app.use(helmet())
 var topicRouter=require('./routes/topic')
-var path = require('path');
-var sanitizeHtml = require('sanitize-html');
 var indexRouter=require('./routes/index')
 
 app.use(express.static('public'));
